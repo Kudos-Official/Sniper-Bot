@@ -1,0 +1,24 @@
+{
+  "name": "-asdf",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "engines": {
+    "node": "12.x"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aoi.js": "^4.4.4",
+    "dbdjs.db": "2.0.1",
+    "discord-buttons": "^3.2.1",
+    "discord-together": "^1.1.53",
+    "discord.js": "^12.5.3",
+    "discord.js-akinator": "^2.1.0",
+    "g-i-s": "^2.1.6",
+    "relevant-urban": "^2.0.0"
+  }
+}
