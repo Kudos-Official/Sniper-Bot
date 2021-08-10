@@ -1,0 +1,20 @@
+module.exports = ({
+name:"evars",
+code:`$setchannelvar[esnipe_message;] 
+$setchannelvar[esnipe_omessage;]
+$setchannelvar[esnipe_link;]
+$setchannelvar[esnipe_count;0] 
+$setchannelvar[esnipe_author;] 
+$setchannelvar[esnipe_time;] 
+$setchannelvar[esnipe_image;] 
+$setservervar[esnipe_time;]
+$setservervar[esnipe_mchannel;]
+$setservervar[esnipe_author;]
+$setservervar[esnipe_time;]
+$setservervar[esnipe_image;]
+$setservervar[esnipe_count;0]
+$setservervar[esnipe_omessage;]
+$setservervar[esnipe_link;]
+$setservervar[esnipe_message;]
+Ok
+$onlyforids[$botownerid;]`})

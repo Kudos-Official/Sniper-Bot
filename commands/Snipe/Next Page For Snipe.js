@@ -1,0 +1,25 @@
+module.exports = [{
+name:"next",
+type:"awaitedCommand",
+code:`$if[$getuservar[snipe_type]==channel]
+$editMessage[$message[1];{author:$usertag[$get[author]]:$useravatar[$get[author]]}{description:$get[message]}{image:$get[image]}{color:RANDOM}{footer:Message Deleted In #$channelname[$get[channel]] | Snipe $get[page]/$sub[$gettextsplitlength;1] | Deleted at}{timestamp:$get[time]};$channelID]
+$let[author;$advancedtextsplit[$getchannelvar[snipe_author;$get[channel]];ᾟ;$get[page]]]
+$let[message;$advancedtextsplit[$getchannelvar[snipe_message;$get[channel]];ᾟ;$get[page]]]
+$let[time;$advancedtextsplit[$getchannelvar[snipe_time;$get[channel]];ᾟ;$get[page]]]
+$let[image;$advancedtextsplit[$getchannelvar[snipe_image;$get[channel]];ᾟ;$get[page]]]
+$setuservar[snipe_page;$get[page]]
+$setuservar[snipe_channel;$get[channel]]
+$let[page;$replacetext[$replacetext[$checkcondition[$getuservar[snipe_page]==$sub[$gettextsplitlength;1]];true;1];false;$sum[$getuservar[snipe_page];1]]]
+$textsplit[$getchannelvar[snipe_message;$get[channel]];ᾟ]
+$let[channel;$getuservar[snipe_channel]]
+$else
+$editMessage[$message[1];{author:$usertag[$get[author]]:$useravatar[$get[author]]}{description:$get[message]}{image:$get[image]}{color:RANDOM}{footer:Message Deleted In #$channelname[$get[channel]] | Snipe $get[page]/$sub[$gettextsplitlength;1] | Deleted at}{timestamp:$get[time]};$channelID]
+$let[author;$advancedtextsplit[$getservervar[snipe_author];ᾟ;$get[page]]]
+$let[message;$advancedtextsplit[$getservervar[snipe_message];ᾟ;$get[page]]]
+$let[time;$advancedtextsplit[$getservervar[snipe_time];ᾟ;$get[page]]]
+$let[image;$advancedtextsplit[$getservervar[snipe_image];ᾟ;$get[page]]]
+$setuservar[snipe_page;$get[page]]
+$let[channel;$advancedtextsplit[$getservervar[snipe_mchannel];ᾟ;$get[page]]]
+$let[page;$replacetext[$replacetext[$checkcondition[$getuservar[snipe_page]==$sub[$gettextsplitlength;1]];true;1];false;$sum[$getuservar[snipe_page];1]]]
+$textsplit[$getservervar[snipe_message];ᾟ]
+$endif`}]
